@@ -20,9 +20,14 @@ const questions = [
     },
     {
         type: "input",
-        message: "usage information",
-        name: "usage",
+        message: "What is the path or link to a demonstration of your project?",
+        name: "usageDemo",
     },
+    {
+        type:"input",
+        message:'Please enter a short description of the demonstration of your project.',
+        name: "usageAlt"
+    }
     {
         type: "input",
         message: "What contribution guidelines would you like to set? The default is the 'Contributor Convenant'.",
@@ -68,13 +73,12 @@ const questions = [
 
 function init() {
     inquirer.prompt(questions).then((response) => {
-        generateMd(response);
-        // fs.writeFile('README.md', generateMD(response), (err) => {
-        //     if (err) {
-        //         console.error(err);
-        //         return;
-        //     }
-        // });
+        fs.writeFile('README.md', generateMd(response), (err) => {
+            if (err) {
+                console.error(err);
+                return;
+            }
+        });
     });
 }
 

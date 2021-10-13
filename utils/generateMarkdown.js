@@ -83,13 +83,12 @@ function generateMarkdown(data) {
   ${licenseBadge}
 
   ## Table of Contents
-    * [Description](#Description)
-    * [Installation](#Installation)
-    * [Usage](#Usage)
-    * [Contribution](#Contribution)
-    * [Testing](#Testing)
-    * [Notes](#Notes)
-    * 
+  * [Description](#Description)
+  * [Installation](#Installation)
+  * [Usage](#Usage)
+  * [Contribution](#Contribution)
+  * [Testing](#Testing)
+  * [Notes](#Notes)
   ## Description
   ${data.description}
 
@@ -97,7 +96,7 @@ function generateMarkdown(data) {
   Modules needed: ${data.installation}
 
   ## Usage 
-  ${data.usage}
+  [${data.usageAlt}](${data.usageDemo})
 
   ## Contribution
   ${contribution}
