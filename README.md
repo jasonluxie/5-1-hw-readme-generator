@@ -14,7 +14,9 @@
   This node application generates a README taken from command line user input.
 
   ## Installation
-  Modules needed: inquirer
+  ```
+  npm i inquirer
+  ```
 
   ## Usage 
   [Video showing application being run in command line and subsequent readme file]()

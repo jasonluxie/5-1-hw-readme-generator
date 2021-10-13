@@ -94,7 +94,9 @@ function generateMarkdown(data) {
   ${data.description}
 
   ## Installation
-  Modules needed: ${data.installation}
+  \`\`\` 
+  npm i ${data.installation}
+  \`\`\`
 
   ## Usage 
   [${data.usageAlt}](${data.usageDemo})
