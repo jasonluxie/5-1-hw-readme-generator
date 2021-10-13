@@ -27,7 +27,7 @@ const questions = [
         type:"input",
         message:'Please enter a short description of the demonstration of your project.',
         name: "usageAlt"
-    }
+    },
     {
         type: "input",
         message: "What contribution guidelines would you like to set? The default is the 'Contributor Convenant'.",
