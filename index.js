@@ -1,7 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMd = require("./utils/generateMarkdown.js");
-
 const questions = [
     {
         type: "input",
@@ -26,12 +25,12 @@ const questions = [
     },
     {
         type: "input",
-        message: "contribution guidelines",
+        message: "What contribution guidelines would you like to set? The default is the 'Contributor Convenant'.",
         name: "contribution",
     },
     {
         type: "input",
-        message: "test instructions",
+        message: "Please explain what your libraries do and how to test them.",
         name: "test",
     },
     {
@@ -51,35 +50,32 @@ const questions = [
         choices: [
             "None",
             "Apache License 2.0",
-            "GNU General Public License 3.0",
-            "MIT License",
-            'BSD 2-Clause "Simplified" License',
-            'BSD 3-Clause "New" or "Revised" License',
             "Boost Software License",
-            "Creative Commons Zero 1.0 Universal",
+            'BSD 2-Clause License',
+            'BSD 3-Clause License',
+            "CC0 1.0 Universal",
             "Eclipse Public License 2.0",
-            "GNU Affero General Public License 3.0",
-            "GNU General Public License 2.0",
-            "GNU Lesser General Public License 2.1",
+            "GNU GPL v2",
+            "GNU GPL v3",
+            "GNU AGPL v3",
+            "GNU LGPL v3",
+            "MIT License",
             "Mozilla Public License 2.0",
-            "The Unilicense",
+            "The Unlicense",
         ],
     },
 ];
-inquirer.prompt(questions).then((response) => {
-    generateMd(response);
-    // fs.writeFile("README.md", generateMD(response), (err) => {
-    //     if (err) {
-    //         console.error(err);
-    //         return;
-    //     }
-    // });
-});
 
-// TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions).then((response) => {
+        generateMd(response);
+        // fs.writeFile('README.md', generateMD(response), (err) => {
+        //     if (err) {
+        //         console.error(err);
+        //         return;
+        //     }
+        // });
+    });
+}
 
-// Function call to initialize app
 init();
-
-generateMd("test");
